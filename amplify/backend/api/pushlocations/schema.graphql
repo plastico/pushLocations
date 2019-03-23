@@ -1,0 +1,13 @@
+type Thema @model {
+  id: ID!
+  name: String!
+  locations: [Locations] @connection(name: "Themas")
+}
+type Locations @model {
+  id: ID!
+  name: String!
+  latitude: Float!
+  longitude: Float!
+  lastupdate: Int!
+  thema: Thema @connection(name: "Themas")
+}
